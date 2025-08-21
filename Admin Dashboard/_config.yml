@@ -1,0 +1,8 @@
+# Site settings
+title: Admin Dashboard
+description: A basic Jekyll site for the Admin Dashboard.
+baseurl: "/admin-dashboard" # The subpath of your site, e.g. /blog/
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-primer
