@@ -3,7 +3,7 @@ name: Deploy Jekyll Site to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build_and_deploy:
@@ -16,18 +16,18 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' 
-          bundler-cache: true 
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 1 # Add this to bust the cache if needed
 
       - name: Install Jekyll dependencies
         run: |
-          gem install jekyll bundler
-          bundle config set --local path vendor/bundle
+          cd "Admin Dashboard" # Change to the correct directory
           bundle install
 
       - name: Build Jekyll site
         run: |
-          cd "Admin Dashboard"
+          cd "Admin Dashboard" # Change to the correct directory again
           bundle exec jekyll build --source . --destination ../_site
         env:
           JEKYLL_ENV: production
@@ -38,3 +38,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          destination_dir: /admin-dashboard
