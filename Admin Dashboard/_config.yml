@@ -1,7 +1,7 @@
 # Site settings
 title: Admin Dashboard
 description: A basic Jekyll site for the Admin Dashboard.
-baseurl: "/Odin-Project-Solutions/admin-dashboard" # Update this line
+baseurl: "/Odin-Project-Solutions" # Update this line
 
 # Build settings
 markdown: kramdown
