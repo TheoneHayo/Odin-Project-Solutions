@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -52,10 +52,10 @@ body {
 }
 
 .icon-text:hover {
- background-color: rgba(118, 174, 224, 0.355);
- width: 180px;
- padding: 3px;
- border-radius: 10px;
+  background-color: rgba(118, 174, 224, 0.355);
+  width: 180px;
+  padding: 3px;
+  border-radius: 10px;
 }
 
 .icon-text svg {
@@ -67,7 +67,7 @@ body {
 
 .icon-text p {
   margin-left: 10px;
-  font-size: 17px;;
+  font-size: 17px;
 }
 
 .list-items-bottom {
@@ -85,6 +85,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
+  padding: 10px 20px;
 }
 
 .navbar {
@@ -94,7 +95,7 @@ body {
   margin: 10px;
 }
 
-.form-input{
+.form-input {
   width: 500px;
   height: 22px;
   background-color: #d4d4d4;
@@ -163,13 +164,15 @@ button {
 }
 
 button:hover {
- background-color: rgb(39, 161, 202);
+  background-color: rgb(39, 161, 202);
 }
 
 .content {
   background-color: #d4d4d4;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  padding: 20px;
+  gap: 20px;
 }
 
 .projects {
@@ -182,11 +185,12 @@ button:hover {
 }
 
 .cards {
- display: flex;
- flex-wrap: wrap;
- gap: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 200px;
 }
-
 
 .card {
   padding: 20px 20px;
@@ -225,7 +229,6 @@ button:hover {
 }
 
 .mini-icons svg:hover {
-  
   background-color: rgba(216, 223, 230, 0.226);
   width: 23.5px;
   padding: 3px;
@@ -248,7 +251,7 @@ button:hover {
   color: black;
 }
 
-.right-side strong > p {
+.right-side strong>p {
   font-weight: 100px;
 }
 
@@ -269,21 +272,21 @@ button:hover {
 }
 
 .announcements {
- padding: 20px;
- background-color: white;
- border-radius: 10px;
- width: 200px;
- height: 200px;
- box-shadow: inset;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  box-shadow: inset;
 }
 
 
 .announcements li {
-border-bottom: 1px solid rgb(90, 89, 89);
+  border-bottom: 1px solid rgb(90, 89, 89);
 }
 
 .announcements p {
-margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .announcements li:last-child {
@@ -291,11 +294,11 @@ margin-bottom: 8px;
 }
 
 .trending {
- padding: 20px;
- background-color: white;
- border-radius: 10px;
- width: 200px;
- box-shadow: inset;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: inset;
 }
 
 .lists {
@@ -333,4 +336,146 @@ margin-bottom: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+/* Media queries */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .sidebar {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .main {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    margin-left: 0;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .form-input {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .navbar img,
+  .navbar h5 {
+    display: none;
+  }
+
+  .welcome {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
+
+  .left {
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .right {
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+  }
+
+  .right button {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .main {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects {
+    margin: 0;
+    text-align: center;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .right-side {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .announcements,
+  .trending {
+    width: 100%;
+  }
+
+  .logo-text h1 {
+    font-size: 20px;
+  }
+
+  .icon-text p {
+    font-size: 15px;
+  }
+
+  .welcome-text h3 {
+    font-size: 1.2em;
+  }
 }
